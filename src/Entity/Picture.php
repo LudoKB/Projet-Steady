@@ -25,6 +25,10 @@ class Picture
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $comment = null;
 
+    #[ORM\ManyToOne(inversedBy: 'pictures')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Shop $Shop = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +78,18 @@ class Picture
     public function setComment(?string $comment): static
     {
         $this->comment = $comment;
+
+        return $this;
+    }
+
+    public function getShop(): ?Shop
+    {
+        return $this->Shop;
+    }
+
+    public function setShop(?Shop $Shop): static
+    {
+        $this->Shop = $Shop;
 
         return $this;
     }
