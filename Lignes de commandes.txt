@@ -1,7 +1,0 @@
-cd C:\Users\Ludok\Desktop\Steady
-
-php bin/console doctrine:mapping:info          // lister les entitées de la base de donnée
-php bin/console doctrine:database:create       // Pour créer une base de données depuis le .env
-php bin/console make:entity Restaurant         // Pour créer une entité Restaurant avec ses attributs
-php bin/console make:migration                 // Pour créer la migration contenant les requêtes SQL de la classe
-php bin/console doctrine:migrations:migrate    // Pour exécuter les requêtes SQL de la migration
